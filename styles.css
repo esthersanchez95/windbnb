@@ -1,0 +1,96 @@
+*{
+font-family: 'Lato', sans-serif;
+font-weight: 400;
+margin: 0;
+}
+
+body{height: auto;
+    
+}
+
+main{
+    height: auto;
+    margin: 5% 5%;
+    display: block;
+}
+
+
+
+h1{
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+
+h2{
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+
+
+#container {
+	display: grid;
+    margin: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
+    justify-content: center;
+}
+
+.alojamiento {
+    justify-content: center;
+    align-content: center;
+}
+
+.alojFoto {
+	margin-bottom: 5px;
+    border-radius: 25px;
+	height: 200px;
+	width: 300px;
+}
+
+.superhost {
+	border: 1.5px solid indianred;
+    color: indianred;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 0px 5px;
+    font-size: small;
+    
+}
+
+.tipo {
+    font-size: small;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.camas {
+    font-size: small;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.star {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+.rating {
+    font-size: small;
+    font-weight: 800;
+    display: inline-block;
+}
+
+footer {
+
+    color: darkgray;
+    text-align: center;
+    display: block;
+    padding: 3% 0;
+    bottom:0;
+  
+
+  }
