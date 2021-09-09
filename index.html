@@ -7,8 +7,14 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
   <script src="javascript.js" type="text/javascript"></script>
- 
+ <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <!-- jquery ui-->
+ <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+ <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.structure.min.css">
+ <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.theme.min.css">
+ 
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
@@ -22,12 +28,18 @@
 
             <nav class="navbar navbar-light bg-light justify-content-around">
                 <a class="navbar-brand"><img id='logo' src="windbnb-master/logo.png" alt="Logo WindBnb"></a>
-                <form class="form-inline">
-
-                    <input type="number" class= "form-control mr-sm-2" placeholder= "Add guests" id="guests" name="guests" required >
-
-                  <input id="myInput" class="form-control mr-sm-2" type="search" placeholder="Search location" aria-label="Search">
-                  <!-- <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button> -->
+                
+                  <fieldset>
+                    <legend>City </legend>
+                    <label for="Helsinki">Helsinki</label>
+                    <input type="checkbox" name="Helsinki" id="Helsinki">
+                    <label for="Turku">Turku</label>
+                    <input type="checkbox" name="Turku" id="Turku">
+                    <label for="Vaasa">Vaasa</label>
+                    <input type="checkbox" name="Vaasa" id="Vaasa">
+                    <label for="Oulu">Oulu</label>
+                    <input type="checkbox" name="Oulu" id="Oulu">
+                  </fieldset>
                 </form>
               </nav>
               
@@ -40,30 +52,39 @@
         
 
         <div id="container">
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento1"></div>
 
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento2"></div>
 
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento3"></div>
 
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento4"></div>
 
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento5"></div>
 
-            <div class="alojamiento"></div>
+            <div class="alojamiento" id="alojamiento6"></div>
+
+            <div class="alojamiento" id="alojamiento7"></div>
+
+            <div class="alojamiento" id="alojamiento8"></div>
+
+            <div class="alojamiento" id="alojamiento9"></div>
+
+            <div class="alojamiento" id="alojamiento10"></div>
+
+            <div class="alojamiento" id="alojamiento11"></div>
+
+            <div class="alojamiento" id="alojamiento12"></div>
+
+            <div class="alojamiento" id="alojamiento13"></div>
+
+            <div class="alojamiento" id="alojamiento14"></div>
+
+            <div class="alojamiento" id="alojamiento15"></div>
         </div>
     </main>
 
     <footer>Created by Ester Sánchez Sánchez</footer>
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#container *").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-        });
-        </script>
+   
 </body>
 </html>

@@ -15,7 +15,7 @@ var datosAlojamiento = [
       "photo": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
     },
     {
-      "city": "Turku",
+      "city": "Helsinki",
       "country": "Finland",
       "superHost": false,
       "title": "Nice apartment in center of Helsinki",
@@ -197,6 +197,38 @@ var datosAlojamiento = [
  });
  */
 
+ //buscador checkbox
+ var checkbox = $("[type='checkbox']");
+ var helsinki = $("[name='Helsinki']");
+ var turku = $("[name='Turku']");
+ var vaasa = $("[name='Vaasa']");
+ var oulu = $("[name='Oulu']");
+
+
+$( function() {
+  checkbox.checkboxradio({
+    icon: false
+  });
+} );
+
+helsinki.click(function(){
+  $('div .alojamiento').not("#alojamiento1, #alojamiento2, #alojamiento3, #alojamiento4, #alojamiento13").css("display", "none");
+});
+
+turku.click(function(){
+  $('div .alojamiento').not("#alojamiento5, #alojamiento14, #alojamiento15").css("display", "none");
+});
+
+oulu.click(function(){
+  $('div .alojamiento').not("#alojamiento8, #alojamiento9, #alojamiento10, #alojamiento11").css("display", "none");
+});
+
+vaasa.click(function(){
+  $('div .alojamiento').not("#alojamiento6, #alojamiento7, #alojamiento12").css("display", "none");
+});
+
+  
+
    //alojamientos
 
   for(var i=0; i<=datosAlojamiento.length; i++){
@@ -206,7 +238,6 @@ var datosAlojamiento = [
     ffoto.className='alojFoto';
 
     var psuperhost = document.createElement('p');
-
     if(datosAlojamiento[i].superHost == false){
         psuperhost.style.display = "none";
     }else{psuperhost.append('SUPER HOST');};
@@ -227,213 +258,18 @@ var datosAlojamiento = [
     estrella.src ="windbnb-master/estrella.png";
     estrella.className='star';
  
-    
-
     var ptitle = document.createElement('h2');
     ptitle.append(datosAlojamiento[i].title);
 
     var ptype = document.createElement('p');
     ptype.append(datosAlojamiento[i].type);
     ptype.className='tipo';
+    
 
     caja_alojamiento[i].append(ffoto, psuperhost, ptype, pcamas, estrella, prating, ptitle);
     
   };
 
- 
-/*
-//alojamiento1
-var caja_alojamiento1 = document.querySelector('#alojamiento1');
-
-console.log(caja_alojamiento1);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[0].photo);
-    ffoto.setAttribute("src", datosAlojamiento[0].photo);
-
-    var psuperhost = document.createElement('p');
-
-    if(datosAlojamiento[0].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[0].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[0].beds + ' camas');};
-
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[0].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[0].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[0].type);
-    
-
-    caja_alojamiento1.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-
-//alojamiento2
-var caja_alojamiento2 = document.querySelector('#alojamiento2');
-
-console.log(caja_alojamiento2);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[1].photo);
-    ffoto.setAttribute("src", datosAlojamiento[1].photo);
-
-    var psuperhost = document.createElement('p');
-    if(datosAlojamiento[1].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[1].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[1].beds + ' camas');};
-
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[1].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[1].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[1].type);
-    
-
-    caja_alojamiento2.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-
-//alojamiento3
-    var caja_alojamiento3 = document.querySelector('#alojamiento3');
-
-    console.log(caja_alojamiento3);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[2].photo);
-    ffoto.setAttribute("src", datosAlojamiento[2].photo);
-
-    var psuperhost = document.createElement('p');
-    if(datosAlojamiento[2].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[2].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[2].beds + ' camas');};
-
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[2].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[2].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[2].type);
-    
-
-    caja_alojamiento3.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-
-//alojamiento4
-var caja_alojamiento4 = document.querySelector('#alojamiento4');
-
-console.log(caja_alojamiento4);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[3].photo);
-    ffoto.setAttribute("src", datosAlojamiento[3].photo);
-
-    var psuperhost = document.createElement('p');
-    if(datosAlojamiento[3].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[3].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[3].beds + ' camas');};
 
 
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[3].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[3].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[3].type);
-    
-
-    caja_alojamiento4.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-
-    //alojamiento5
-    var caja_alojamiento5 = document.querySelector('#alojamiento5');
-
-    console.log(caja_alojamiento5);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[4].photo);
-    ffoto.setAttribute("src", datosAlojamiento[4].photo);
-
-    var psuperhost = document.createElement('p');
-    if(datosAlojamiento[4].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[4].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[4].beds + ' camas');};
-
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[4].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[4].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[4].type);
-    
-
-    caja_alojamiento5.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-
-//alojamiento6
-    var caja_alojamiento6 = document.querySelector('#alojamiento6');
-
-    console.log(caja_alojamiento6);
-
-    var ffoto = document.createElement('img');
-    ffoto.append(datosAlojamiento[5].photo);
-    ffoto.setAttribute("src", datosAlojamiento[5].photo);
-
-    var psuperhost = document.createElement('p');
-    if(datosAlojamiento[5].superHost == false){
-        psuperhost.append('');
-        console.log(psuperhost);
-    }else{psuperhost.append('Superhost');};
-
-    var pcamas = document.createElement('p');
-    if(datosAlojamiento[5].beds == null){
-        pcamas.append('');
-    }else{psuperhost.append(datosAlojamiento[5].beds + ' camas');};
-
-    var prating = document.createElement('p');
-    pcamas.append(datosAlojamiento[5].rating);
-
-    var ptitle = document.createElement('h2');
-    ptitle.append(datosAlojamiento[5].title);
-
-    var ptype = document.createElement('p');
-    ptype.append(datosAlojamiento[5].type);
-    
-
-    caja_alojamiento6.append(ffoto, psuperhost, ptype, pcamas, prating, ptitle);
-*/
 }); //final del load
