@@ -4,8 +4,8 @@ font-weight: 400;
 margin: 0;
 }
 
-body{height: auto;
-    
+body{
+    height: auto;
 }
 
 main{
@@ -27,6 +27,41 @@ h2{
     font-size: 1.2rem;
 }
 
+legend, label{
+    text-align: center;
+    font-size: 1rem;
+    display: inline;
+}
+
+.ui-button, .pick{
+    border: 1px solid gray;
+    border-radius: 99px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    outline: none;
+}
+
+.ui-button:hover {
+	color: indianred;
+    border: 1px solid indianred;
+    background-color: white;
+}
+
+.ui-state-active, .ui-state-active:hover{
+    color: indianred;
+    border: 1px solid indianred;
+    background-color: white;
+}
+
+.pick{
+    text-indent: 10px;
+    width: 150px;
+   
+}
+
+input[type=text]:focus {
+    border: 1px solid indianred;
+  }
 
 
 #container {
@@ -41,6 +76,7 @@ h2{
 .alojamiento {
     justify-content: center;
     align-content: center;
+    cursor: pointer;
 }
 
 .alojFoto {
@@ -95,4 +131,27 @@ footer {
     display: block;
     padding: 3% 0;
     bottom:0;
+  }
+
+  /* mediaqueries */
+  @media (max-width: 780px){
+    .justify-content-around {
+      flex-direction: column;
+      justify-content: center !important;
+    }
+
+    #logo {
+        display: block !important;
+      }
+
+      nav {
+        margin: 0;
+        padding-top: 20px;
+      }
+
+      .navbar-brand, fieldset {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+
   }

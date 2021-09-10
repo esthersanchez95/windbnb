@@ -205,29 +205,60 @@ var datosAlojamiento = [
  var oulu = $("[name='Oulu']");
 
 
-$( function() {
-  checkbox.checkboxradio({
-    icon: false
+  $( function() {
+    checkbox.checkboxradio({
+      icon: false
+    });
+  } );
+
+  helsinki.click(function(){
+    $('div .alojamiento').not("#alojamiento1, #alojamiento2, #alojamiento3, #alojamiento4, #alojamiento13").css("display", "none");
   });
-} );
 
-helsinki.click(function(){
-  $('div .alojamiento').not("#alojamiento1, #alojamiento2, #alojamiento3, #alojamiento4, #alojamiento13").css("display", "none");
-});
+  turku.click(function(){
+    $('div .alojamiento').not("#alojamiento5, #alojamiento14").css("display", "none");
+  });
 
-turku.click(function(){
-  $('div .alojamiento').not("#alojamiento5, #alojamiento14, #alojamiento15").css("display", "none");
-});
+  oulu.click(function(){
+    $('div .alojamiento').not("#alojamiento8, #alojamiento9, #alojamiento10, #alojamiento11").css("display", "none");
+  });
 
-oulu.click(function(){
-  $('div .alojamiento').not("#alojamiento8, #alojamiento9, #alojamiento10, #alojamiento11").css("display", "none");
-});
+  vaasa.click(function(){
+    $('div .alojamiento').not("#alojamiento6, #alojamiento7, #alojamiento12").css("display", "none");
+  });
 
-vaasa.click(function(){
-  $('div .alojamiento').not("#alojamiento6, #alojamiento7, #alojamiento12").css("display", "none");
-});
-
-  
+  //date picker
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
 
    //alojamientos
 
